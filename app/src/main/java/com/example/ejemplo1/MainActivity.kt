@@ -32,6 +32,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/* Modificadores
+ * De posicionamiento = width, height, top, bottom, start, end
+ * De funcionalidad = click, scroll
+ * De apariencia = background, padding, border
+ */
+
 @Preview(showBackground = true)
 @Composable
 fun Content() {
@@ -45,9 +51,4 @@ fun Content() {
             .padding()
             .background(Color.Blue)
     )
-    /* Modificadores
-     * De posicionamiento = width, height, top, bottom, start, end
-     * De funcionalidad = click, scroll
-     * De apariencia = background, padding, border
-     */
 }
