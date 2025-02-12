@@ -8,6 +8,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -40,7 +44,9 @@ class MainActivity : ComponentActivity() {
 fun GreetingPreview() {
     Column {
         // TextFieldSencillo()
-        TextFieldPlaceholder()
+        // TextFieldPlaceholder()
+        OutlinedTextFieldSample()
+        TextFieldWithIcons()
         TextFieldKeyboard()
     }
 }
@@ -84,5 +90,37 @@ fun TextFieldKeyboard() {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
         Text(text = "Tu número es: $text")
+    }
+}
+
+@Composable
+fun OutlinedTextFieldSample() {
+    var text by remember { mutableStateOf("") }
+    Column {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { newText -> text = newText },
+            label = { Text("Introduce tu nombre") }
+        )
+        Text(text = "Tu nombre es: $text")
+    }
+}
+
+@Composable
+fun TextFieldWithIcons() {
+    var text by remember { mutableStateOf("") }
+    Column {
+        OutlinedTextField(
+            value = text,
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Default.Email,
+                    contentDescription = "Email Icon")
+            },
+            onValueChange = { newText -> text = newText },
+            label = { Text("E-mail") },
+            placeholder = { Text("Introduce tu e-mail") }
+        )
+        Text(text = "Tu email es: $text")
     }
 }
