@@ -13,14 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.ejemplo1.ui.theme.Ejemplo1Theme
+import com.example.ejemplo1.views.DetailView
+import com.example.ejemplo1.views.HomeView
 
-// Main Ejemplo 1
+// Modulos Ejemplo 1
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
+            DetailView()
         }
     }
 }
