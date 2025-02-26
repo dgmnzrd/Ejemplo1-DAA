@@ -22,7 +22,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            DetailView()
+            GreetingPreview()
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    // HomeView()
+    DetailView()
 }
