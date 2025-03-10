@@ -23,7 +23,7 @@ import com.example.ejemplo1.components.TitleBar
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailView(navController: NavController) {
+fun DetailView(navController: NavController, id: Int) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -44,23 +44,23 @@ fun DetailView(navController: NavController) {
             ActionButton(Color.Blue)
         }
     ) {
-        ContentView(navController)
+        ContentView(navController, id)
     }
 }
 
 @Composable
-private fun ContentView(navController: NavController) {
+private fun ContentView(navController: NavController, id: Int) {
     LazyColumn {
         item {
             Text(
-                text = "Item 1",
+                text = id.toString(),
                 modifier = Modifier.padding(64.dp),
                 style = MaterialTheme.typography.bodyLarge)
         }
 
         item {
             Text(
-                text = "Item 2",
+                text = id.toString(),
                 modifier = Modifier.padding(64.dp),
                 style = MaterialTheme.typography.bodyLarge)
         }
